@@ -30,7 +30,6 @@ const Category=()=>{
                     <FontAwesome5 name="search" size={24} color="#001435" />
                     <Text style={styles.searchText}>Search</Text>
                 </View>
-
             </View>
 
 
