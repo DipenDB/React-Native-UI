@@ -18,8 +18,10 @@ const OtherFood=(props)=>{
                         <Text style={styles.subHeading}>{props.description}</Text>
                         <Text style={styles.subHeading}>{props.description}</Text>
                         <View style={{flexDirection:'row',marginTop:5,}}>
-                            <Ionicons name="time-outline" size={24} color={Color.IconPinkColor} />
+                            <Ionicons name={props.icon} size={24} color={Color.IconPinkColor} />
                             <Text style={styles.time}>{props.time} Min</Text>
+                            <Ionicons style={{marginLeft:5}} name={props.icon2} size={20} color={Color.IconPinkColor} />
+                            <Text style={styles.time}>{props.rate}</Text>
                         </View>
                     </View>
                 </View>

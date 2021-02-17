@@ -1,12 +1,14 @@
 
 import React from 'react';
-import {View,Text,StyleSheet} from "react-native";
+import {View, Text, StyleSheet, FlatList, ScrollView} from "react-native";
 import { Ionicons,MaterialIcons,FontAwesome5,FontAwesome    } from '@expo/vector-icons';
 import TransactionRow from "./TransactionsRow";
+import {AMOUNT, cardData, carTransaction} from "./data";
 
 
 const Bank = ()=>{
     return(
+        <ScrollView>
         <View style={styles.container}>
             <View style={styles.aboveContainer}>
                 <View style={styles.notificationIcons}>
@@ -14,90 +16,68 @@ const Bank = ()=>{
                     <MaterialIcons name="notifications" size={24} color="white" />
                 </View>
 
-                <View style={styles.balance}>
-                    <Text style={styles.balanceText1}>Your Balance</Text>
-                    <Text style={styles.balanceText2}>$ 547,500.000</Text>
-                </View>
+                <FlatList
+                    data={AMOUNT}
+                    keyExtractor={(item)=>item.name}
+                    numColumns={2}
+                    renderItem={({item})=>(
+                    <View style={styles.balance}>
+                        <Text style={styles.balanceText1}>{item.name}</Text>
+                        <Text style={styles.balanceText2}>{item.amount}</Text>
+                    </View>
+                    )}
+                />
 
-                <View style={styles.boxContainer}>
-                    <View style={styles.box}>
-                        <FontAwesome name="dollar" size={60} color="#3472f9" />
-                        <Text style={styles.boxText2}>$ 5,000</Text>
-                        <Text style={styles.boxText3}>Expense</Text>
-                    </View>
-                    <View style={styles.box}>
-                        <FontAwesome5 name="piggy-bank" size={60} color="#f2a812" />
-                        <Text style={styles.boxText2}>$ 5,000</Text>
-                        <Text style={styles.boxText3}>Expense</Text>
-                    </View>
-                </View>
+
+
+
+                        <View style={styles.boxContainer}>
+                            <FlatList
+
+                                data={cardData}
+                                keyExtractor={(item, index) => item.id }
+
+                                numColumns={2}
+                                columnWrapperStyle={styles.row}
+
+                                renderItem={({item})=>(
+                                    <View style={styles.box}>
+                                        <FontAwesome5 name={item.icon} size={60} color="#f2a812" />
+                                        <Text style={styles.boxText2}>{item.amount}</Text>
+                                        <Text style={styles.boxText3}>{item.type}</Text>
+                                    </View>
+                                )}
+                            />
+                        </View>
+
+
 
 
             </View>
+
+
+
+
+
+
             <View style={styles.bottomContainer}>
+
                 <View style={styles.notificationIcons}>
                         <Text style={{...styles.boxText2, fontWeight:'bold', fontSize:25,}} >Transaction</Text>
                         <View style={styles.SeeAllbutton}><Text style={styles.seeAllText}>See All</Text></View>
                 </View>
 
-
-                <TransactionRow icon='car'/>
-                <TransactionRow icon='home'/>
-                <TransactionRow icon='gift'/>
-                <TransactionRow icon='shopping-bag'/>
-
-
-                {/*<View style={styles.servicesContainer}>*/}
-                {/*    <View style={styles.car}>*/}
-                {/*        <View style={styles.ServicesCircle}>*/}
-                {/*            <FontAwesome5 name="car" size={50} color="white" />*/}
-                {/*        </View>*/}
-                {/*        <View style={styles.Services}>*/}
-                {/*              <Text style={styles.ServicesTitle}>Car Purchase</Text>*/}
-                {/*              <Text style={styles.ServicesSubTitle}>Auto Loan</Text>*/}
-                {/*        </View>*/}
-                {/*    </View>*/}
-                {/*    <View style={styles.ServiceAmountContainer}>*/}
-                {/*        <Text style={styles.ServiceAmount}>$450</Text>*/}
-                {/*    </View>*/}
-                {/*</View>*/}
-
-
-
-                {/*<View style={styles.servicesContainer}>*/}
-                {/*    <View style={styles.car}>*/}
-                {/*        <View style={styles.ServicesCircle}>*/}
-                {/*            <FontAwesome5 name="car" size={50} color="white" />*/}
-                {/*        </View>*/}
-                {/*        <View style={styles.Services}>*/}
-                {/*            <Text style={styles.ServicesTitle}>Car Purchase</Text>*/}
-                {/*            <Text style={styles.ServicesSubTitle}>Auto Loan</Text>*/}
-                {/*        </View>*/}
-                {/*    </View>*/}
-                {/*    <View style={styles.ServiceAmountContainer}>*/}
-                {/*        <Text style={styles.ServiceAmount}>$450</Text>*/}
-                {/*    </View>*/}
-                {/*</View>*/}
-
-
-
-                {/*<View style={styles.servicesContainer}>*/}
-                {/*    <View style={styles.car}>*/}
-                {/*        <View style={styles.ServicesCircle}>*/}
-                {/*            <FontAwesome5 name="car" size={50} color="white" />*/}
-                {/*        </View>*/}
-                {/*        <View style={styles.Services}>*/}
-                {/*            <Text style={styles.ServicesTitle}>Car Purchase</Text>*/}
-                {/*            <Text style={styles.ServicesSubTitle}>Auto Loan</Text>*/}
-                {/*        </View>*/}
-                {/*    </View>*/}
-                {/*    <View style={styles.ServiceAmountContainer}>*/}
-                {/*        <Text style={styles.ServiceAmount}>$450</Text>*/}
-                {/*    </View>*/}
-                {/*</View>*/}
+                <FlatList
+                    data={carTransaction}
+                    keyExtractor={(item, index) => item.id }
+                    renderItem={({item})=>(
+                        <TransactionRow icon={item.icon} name={item.name} type={item.type} price={item.price}/>
+                        )}
+                />
 
             </View>
         </View>
+        </ScrollView>
     )
 }
 
@@ -148,6 +128,7 @@ const styles= StyleSheet.create({
         paddingLeft:20,
         alignItems:'flex-start',
         justifyContent:'center',
+        margin:5,
 
     },
     boxText2:{
@@ -160,6 +141,10 @@ const styles= StyleSheet.create({
     },
     car:{
       flexDirection:'row',
+    },
+    row:{
+        flex: 1,
+        justifyContent: 'space-evenly',
     },
     Services:{
         paddingTop:10,

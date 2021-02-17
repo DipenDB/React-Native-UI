@@ -60,15 +60,15 @@ const FrontPage=()=>{
 
             {/*Other food Rows*/}
             <View >
-                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='35' price='25'/>
-                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35'/>
-                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35'/>
-                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35'/>
-                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35'/>
-                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35'/>
-                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35'/>
-                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35'/>
-                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35'/>
+                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='35' price='25' icon='time-outline' />
+                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35' icon='time-outline' />
+                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35' icon='time-outline' />
+                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35' icon='time-outline' />
+                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35' icon='time-outline' />
+                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35' icon='time-outline' />
+                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35' icon='time-outline' />
+                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35' icon='time-outline' />
+                <OtherFood source={require('../../../assets/burger.jpg')} cousin='Chisnes Cousine' description='A hamburger is a sandwich.' time='40' price='35' icon='time-outline' />
             </View>
         </ScrollView>
 

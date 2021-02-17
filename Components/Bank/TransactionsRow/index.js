@@ -9,15 +9,15 @@ const TransactionRow=(props)=>{
         <View style={styles.servicesContainer}>
             <View style={styles.car}>
                 <View style={styles.ServicesCircle}>
-                    <FontAwesome5 name="{props.icon}" size={30} color="white" />
+                    <FontAwesome5 name={props.icon} size={30} color="white" />
                 </View>
                 <View style={styles.Services}>
-                    <Text style={styles.ServicesTitle}>Car Purchase</Text>
-                    <Text style={styles.ServicesSubTitle}>Auto Loan</Text>
+                    <Text style={styles.ServicesTitle}>{props.name}</Text>
+                    <Text style={styles.ServicesSubTitle}>{props.type}</Text>
                 </View>
             </View>
             <View style={styles.ServiceAmountContainer}>
-                <Text style={styles.ServiceAmount}>$450</Text>
+                <Text style={styles.ServiceAmount}>{props.price}</Text>
             </View>
         </View>
 
