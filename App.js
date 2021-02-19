@@ -17,6 +17,7 @@ import ButtonComponent from "./Components/Practice/Button";
 import ModalComponent from "./Components/Practice/Modal";
 import PressableComponent from "./Components/Practice/PressableComponent";
 import ToDos from "./Components/ToDos";
+import TODO from "./Components/TODO-DEERWALK";
 
 export default function App() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
     {/*<ModalComponent/>*/}
     {/*<PressableComponent/>*/}
     <ToDos/>
+    {/*<TODO/>*/}
 
 
 
